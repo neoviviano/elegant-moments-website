@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-const WeddingGallery = () => {
+const WeddingGallery = ({ showAll = false }) => {
   const images = [
     "/lovable-uploads/dcba3e3b-f432-4637-9994-6f1070b2a45c.png",
     "/lovable-uploads/6b41f579-8ca2-4a6d-b1bc-48397e02863b.png",
@@ -12,12 +14,14 @@ const WeddingGallery = () => {
     "/lovable-uploads/bfc4eabd-a594-4708-95e1-34c77ae0776d.png",
   ];
 
+  const displayImages = showAll ? images : images.slice(0, 3);
+
   return (
     <section className="py-16 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-display text-center mb-12">Wedding Gallery</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((image, index) => (
+          {displayImages.map((image, index) => (
             <Card key={index} className="overflow-hidden">
               <CardContent className="p-0">
                 <img
@@ -29,6 +33,18 @@ const WeddingGallery = () => {
             </Card>
           ))}
         </div>
+        {!showAll && (
+          <div className="text-center mt-8">
+            <Link to="/gallery">
+              <Button
+                size="lg"
+                className="bg-accent text-primary hover:bg-accent/90"
+              >
+                View Full Gallery
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

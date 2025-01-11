@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -31,8 +32,8 @@ const Hero = () => {
           </Button>
           <Button
             size="lg"
-            variant="outline"
-            className="text-white border-white hover:bg-white/10"
+            variant="secondary"
+            className="bg-white text-primary hover:bg-white/90"
           >
             View Our Services
           </Button>
