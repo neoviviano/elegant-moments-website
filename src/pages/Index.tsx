@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WeddingGallery from "@/components/WeddingGallery";
+import ServiceSection from "@/components/ServiceSection";
 
 const Index = () => {
   return (
@@ -8,6 +9,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <WeddingGallery />
+      <ServiceSection isHomePage={true} />
     </div>
   );
 };

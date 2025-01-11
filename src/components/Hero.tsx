@@ -23,20 +23,30 @@ const Hero = () => {
         <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
           Transform your events into unforgettable experiences with our bespoke planning and management services.
         </p>
-        <div className="space-x-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
           <Button
             size="lg"
-            className="bg-accent text-primary hover:bg-accent/90"
+            className="bg-accent text-primary hover:bg-accent/90 w-full md:w-auto"
           >
             Schedule Consultation
           </Button>
           <Button
             size="lg"
             variant="secondary"
-            className="bg-white text-primary hover:bg-white/90"
+            className="bg-accent/20 text-white hover:bg-accent/30 w-full md:w-auto"
           >
             View Our Services
           </Button>
+        </div>
+        
+        {/* Founder Quote */}
+        <div className="mt-16 max-w-2xl mx-auto bg-black/30 p-8 rounded-lg">
+          <p className="text-white/90 font-display italic text-xl mb-4">
+            "Creating long lasting memories has been my lifelong passion, Now I want to share my passion with others to embrace"
+          </p>
+          <p className="text-accent font-display text-lg">
+            ~Jacinto Mandi, Founder
+          </p>
         </div>
       </div>
     </div>
