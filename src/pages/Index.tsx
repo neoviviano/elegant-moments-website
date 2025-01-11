@@ -9,7 +9,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <WeddingGallery />
-      <ServiceSection isHomePage={true} />
+      <ServiceSection />
     </div>
   );
 };
