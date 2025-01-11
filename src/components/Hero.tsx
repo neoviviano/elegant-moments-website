@@ -33,18 +33,18 @@ const Hero = () => {
           <Button
             size="lg"
             variant="secondary"
-            className="bg-accent/20 text-white hover:bg-accent/30 w-full md:w-auto"
+            className="bg-accent text-primary hover:bg-accent/90 w-full md:w-auto"
           >
             View Our Services
           </Button>
         </div>
         
-        {/* Founder Quote */}
-        <div className="mt-16 max-w-2xl mx-auto bg-black/30 p-8 rounded-lg">
-          <p className="text-white/90 font-display italic text-xl mb-4">
+        {/* Founder Quote - Made Smaller */}
+        <div className="mt-12 max-w-xl mx-auto bg-black/30 p-6 rounded-lg">
+          <p className="text-white/90 font-display italic text-lg mb-3">
             "Creating long lasting memories has been my lifelong passion, Now I want to share my passion with others to embrace"
           </p>
-          <p className="text-accent font-display text-lg">
+          <p className="text-accent font-display text-base">
             ~Jacinto Mandi, Founder
           </p>
         </div>
