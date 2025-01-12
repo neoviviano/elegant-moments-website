@@ -1,15 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import WeddingGallery from "@/components/WeddingGallery";
-import ServiceSection from "@/components/ServiceSection";
+import PreviewGallery from "@/components/PreviewGallery";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <WeddingGallery />
-      <ServiceSection />
+      <PreviewGallery />
+      <Footer />
     </div>
   );
 };
