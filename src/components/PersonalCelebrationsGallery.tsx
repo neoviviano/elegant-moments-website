@@ -1,15 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 
-const WeddingGallery = () => {
+const PersonalCelebrationsGallery = () => {
   const images = [
-    "/lovable-uploads/dcba3e3b-f432-4637-9994-6f1070b2a45c.png",
-    "/lovable-uploads/6b41f579-8ca2-4a6d-b1bc-48397e02863b.png",
-    "/lovable-uploads/9453c29a-a330-49b7-9a70-d75ef626a4bf.png",
-    "/lovable-uploads/84059584-07ca-4635-b1a3-3807e9f57840.png",
-    "/lovable-uploads/7e830366-eeec-46aa-95eb-0b446d31a804.png",
-    "/lovable-uploads/8b7822c6-3390-4ea5-b8a7-09a0ff136de6.png",
-    "/lovable-uploads/3100b604-530d-4322-9369-99c7403aa3be.png",
-    "/lovable-uploads/bfc4eabd-a594-4708-95e1-34c77ae0776d.png",
+    "/lovable-uploads/4e9cdfb7-f8f1-4234-bdc7-2f1c0f107b86.png",
+    "/lovable-uploads/78212b39-4802-4b64-bda0-f0332ee3dc98.png",
+    "/lovable-uploads/7cc05538-cf9b-473c-a7cf-01dea2f9b0ea.png",
+    "/lovable-uploads/af57c78e-1c0b-4abc-a771-95feb7bef975.png",
+    "/lovable-uploads/c00409ec-e26b-4a3a-b860-87358f4d8b7d.png",
+    "/lovable-uploads/c3b853f1-34b3-4bce-834d-c7f0f6de8628.png",
   ];
 
   return (
@@ -21,7 +19,7 @@ const WeddingGallery = () => {
               <CardContent className="p-0">
                 <img
                   src={image}
-                  alt={`Wedding decoration ${index + 1}`}
+                  alt={`Personal celebration ${index + 1}`}
                   className="w-full h-[300px] object-cover transition-transform duration-300 hover:scale-105"
                 />
               </CardContent>
@@ -33,4 +31,4 @@ const WeddingGallery = () => {
   );
 };
 
-export default WeddingGallery;
+export default PersonalCelebrationsGallery;
