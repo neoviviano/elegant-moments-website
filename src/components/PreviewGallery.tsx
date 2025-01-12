@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const PreviewGallery = () => {
   const categories = [
@@ -38,6 +39,14 @@ const PreviewGallery = () => {
       ],
     },
     {
+      title: "Catering Events",
+      images: [
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+        "https://images.unsplash.com/photo-1555244162-803834f70033",
+        "https://images.unsplash.com/photo-1555244162-803834f70033",
+      ],
+    },
+    {
       title: "Specialized Events",
       images: [
         "https://images.unsplash.com/photo-1439337153520-7082a56a81f4",
@@ -50,26 +59,41 @@ const PreviewGallery = () => {
   return (
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-display text-center mb-12">Our Portfolio</h2>
-        {categories.map((category, index) => (
-          <div key={index} className="mb-16">
-            <h3 className="text-2xl font-display mb-6">{category.title}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {category.images.map((image, imgIndex) => (
-                <Card key={imgIndex} className="overflow-hidden">
-                  <CardContent className="p-0">
-                    <img
-                      src={image}
-                      alt={`${category.title} ${imgIndex + 1}`}
-                      className="w-full h-[250px] object-cover transition-transform duration-300 hover:scale-105"
-                    />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        ))}
-        <div className="text-center mt-8">
+        <h2 className="text-3xl md:text-4xl font-display text-center mb-12">Our Gallery</h2>
+        
+        <Tabs defaultValue="weddings" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-8">
+            {categories.map((category) => (
+              <TabsTrigger key={category.title} value={category.title.toLowerCase().replace(" ", "-")}>
+                {category.title}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {categories.map((category) => (
+            <TabsContent 
+              key={category.title} 
+              value={category.title.toLowerCase().replace(" ", "-")}
+              className="mt-6"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.images.map((image, imgIndex) => (
+                  <Card key={imgIndex} className="overflow-hidden">
+                    <CardContent className="p-0">
+                      <img
+                        src={image}
+                        alt={`${category.title} ${imgIndex + 1}`}
+                        className="w-full h-[250px] object-cover transition-transform duration-300 hover:scale-105"
+                      />
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+
+        <div className="text-center mt-12">
           <Link to="/gallery">
             <Button className="bg-accent text-primary hover:bg-accent/90">
               View Full Gallery
