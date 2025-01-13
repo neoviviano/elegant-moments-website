@@ -3,6 +3,7 @@ import Index from "@/pages/Index";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
 import Gallery from "@/pages/Gallery";
+import LearnAboutEEM from "@/pages/LearnAboutEEM";
 import Footer from "@/components/Footer";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/learn-about-eem" element={<LearnAboutEEM />} />
           </Routes>
         </div>
         <Footer />
