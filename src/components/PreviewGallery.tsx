@@ -32,11 +32,7 @@ const PreviewGallery = () => {
     },
     {
       title: "Corporate Events",
-      images: [
-        "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
-        "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
-        "https://images.unsplash.com/photo-1431576901776-e539bd916ba2",
-      ],
+      comingSoon: true,
     },
     {
       title: "Catering Events",
@@ -48,11 +44,7 @@ const PreviewGallery = () => {
     },
     {
       title: "Specialized Events",
-      images: [
-        "https://images.unsplash.com/photo-1439337153520-7082a56a81f4",
-        "https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a",
-        "https://images.unsplash.com/photo-1473177104440-ffee2f376098",
-      ],
+      comingSoon: true,
     },
   ];
 
@@ -62,9 +54,13 @@ const PreviewGallery = () => {
         <h2 className="text-3xl md:text-4xl font-display text-center mb-12">Our Gallery</h2>
         
         <Tabs defaultValue="weddings" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-8">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 mb-8 overflow-x-auto">
             {categories.map((category) => (
-              <TabsTrigger key={category.title} value={category.title.toLowerCase().replace(" ", "-")}>
+              <TabsTrigger 
+                key={category.title} 
+                value={category.title.toLowerCase().replace(" ", "-")}
+                className="px-2 py-1 text-sm md:text-base whitespace-nowrap"
+              >
                 {category.title}
               </TabsTrigger>
             ))}
@@ -76,26 +72,36 @@ const PreviewGallery = () => {
               value={category.title.toLowerCase().replace(" ", "-")}
               className="mt-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.images.map((image, imgIndex) => (
-                  <Card key={imgIndex} className="overflow-hidden">
-                    <CardContent className="p-0">
-                      <img
-                        src={image}
-                        alt={`${category.title} ${imgIndex + 1}`}
-                        className="w-full h-[250px] object-cover transition-transform duration-300 hover:scale-105"
-                      />
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+              {category.comingSoon ? (
+                <div className="bg-muted rounded-lg p-8 text-center">
+                  <h3 className="text-2xl font-display mb-4">Coming Soon</h3>
+                  <p className="text-muted-foreground">
+                    We are currently curating an exceptional collection of {category.title.toLowerCase()}. 
+                    Please check back soon to explore our premium event experiences.
+                  </p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {category.images?.map((image, imgIndex) => (
+                    <Card key={imgIndex} className="overflow-hidden">
+                      <CardContent className="p-0">
+                        <img
+                          src={image}
+                          alt={`${category.title} ${imgIndex + 1}`}
+                          className="w-full h-[250px] object-cover transition-transform duration-300 hover:scale-105"
+                        />
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
             </TabsContent>
           ))}
         </Tabs>
 
         <div className="text-center mt-12">
           <Link to="/gallery">
-            <Button className="bg-accent text-primary hover:bg-accent/90">
+            <Button className="bg-accent text-primary hover:bg-accent/90 w-full md:w-auto">
               View Full Gallery
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

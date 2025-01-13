@@ -21,7 +21,7 @@ const Contact = () => {
     return phoneRegex.test(phone);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validatePhone(formData.phone)) {
@@ -34,6 +34,10 @@ const Contact = () => {
     }
 
     // Here you would typically send the form data to your backend
+    // For now, we'll just open the default email client
+    const mailtoLink = `mailto:Elegenceeventsmanagement@gmail.com?subject=New Contact Form Submission&body=Name: ${formData.fullName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AMessage: ${formData.message}`;
+    window.location.href = mailtoLink;
+
     toast({
       title: "Thank you for reaching out!",
       description: "We'll get back to you shortly.",
