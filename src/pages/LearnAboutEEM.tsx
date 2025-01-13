@@ -1,41 +1,16 @@
 import Navbar from "@/components/Navbar";
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
 
 const LearnAboutEEM = () => {
-  const { toast } = useToast();
-
-  const copyLink = () => {
-    const link = `${window.location.origin}/learn-about-eem`;
-    navigator.clipboard.writeText(link);
-    toast({
-      title: "Link copied!",
-      description: "The link to this page has been copied to your clipboard.",
-    });
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-24 px-4 max-w-7xl mx-auto">
-        <div className="flex justify-center mb-4">
-          <Button 
-            variant="outline" 
-            onClick={copyLink}
-            className="bg-accent text-primary hover:bg-accent/90"
-          >
-            Copy Link to Page
-          </Button>
-        </div>
-        <h1 className="text-4xl font-display font-bold text-center mb-2">Hello</h1>
-        <h1 className="text-4xl font-display font-bold text-center mb-12">About Us</h1>
-        
         {/* Origins Section */}
         <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div className="md:w-1/2">
             <h2 className="text-2xl font-display font-semibold mb-4">Origins</h2>
             <p className="text-lg leading-relaxed">
-              <span className="font-semibold">Elegance event management</span> was born out of a passion for creating <span className="text-primary font-semibold">magical moments</span> and <span className="text-primary font-semibold">unforgettable experiences</span>. Founder <span className="font-semibold">Jacinto</span>, has always had a knack for organizing and coordinating events, and he saw a gap in the market for event management that offers <span className="text-primary font-semibold">exceptional services</span>, tailored to the unique needs & our customers. With a vision to become the <span className="text-primary font-semibold">go-to destination</span> for socialites, party host, staff parties and any part of events in Cape town.
+              <span className="font-semibold">Elegance event management</span> was born out of a passion for creating <span className="text-accent font-semibold">magical moments</span> and <span className="text-accent font-semibold">unforgettable experiences</span>. Founder <span className="font-semibold">Jacinto</span>, has always had a knack for organizing and coordinating events, and he saw a gap in the market for event management that offers <span className="text-accent font-semibold">exceptional services</span>, tailored to the unique needs & our customers. With a vision to become the <span className="text-accent font-semibold">go-to destination</span> for socialites, party host, staff parties and any part of events in Cape town.
             </p>
           </div>
           <div className="md:w-1/2">
@@ -54,7 +29,7 @@ const LearnAboutEEM = () => {
             </div>
             <div className="md:w-1/2">
               <p className="text-lg leading-relaxed">
-                Our <span className="text-primary font-semibold">RELENTLESS</span> commitment to customer satisfaction
+                Our <span className="text-accent font-semibold">RELENTLESS</span> commitment to customer satisfaction
               </p>
             </div>
           </div>
@@ -66,7 +41,7 @@ const LearnAboutEEM = () => {
             </div>
             <div className="md:w-1/2">
               <p className="text-lg leading-relaxed">
-                <span className="text-primary font-semibold">UNDERSTANDING</span> that each unique event <span className="text-primary font-semibold">REQUIRES</span> personalized touch which is why we give customizable packages to meet the needs and preferences of our customers.
+                <span className="text-accent font-semibold">UNDERSTANDING</span> that each unique event <span className="text-accent font-semibold">REQUIRES</span> personalized touch which is why we give customizable packages to meet the needs and preferences of our customers.
               </p>
             </div>
           </div>
@@ -78,7 +53,7 @@ const LearnAboutEEM = () => {
             </div>
             <div className="md:w-1/2">
               <p className="text-lg leading-relaxed">
-                Over delivery, our team will go <span className="text-primary font-semibold">above and beyond</span> to ensure every detail is taken care of from set up to clean up as well as our expert caterers who will leave no stone unturned and <span className="text-primary font-semibold">GUARANTEE</span> that our client enjoys their culinary experience
+                Over delivery, our team will go <span className="text-accent font-semibold">above and beyond</span> to ensure every detail is taken care of from set up to clean up as well as our expert caterers who will leave no stone unturned and <span className="text-accent font-semibold">GUARANTEE</span> that our client enjoys their culinary experience
               </p>
             </div>
           </div>
@@ -91,13 +66,13 @@ const LearnAboutEEM = () => {
             <img src="/lovable-uploads/4376c279-23f3-4232-9322-94ed2730ae39.png" alt="Financial growth" className="rounded-lg shadow-lg w-full md:w-2/3 mb-8" />
             <div className="text-lg leading-relaxed space-y-4">
               <p>
-                In terms of financial projections, we anticipate generating a revenue of <span className="text-primary font-semibold">R 200,000</span> in our first year of operation. We are also confident in our business model and expect a remarkable <span className="text-primary font-semibold">growth rate of 80%</span> in the coming years.
+                In terms of financial projections, we anticipate generating a revenue of <span className="text-accent font-semibold">R 200,000</span> in our first year of operation. We are also confident in our business model and expect a remarkable <span className="text-accent font-semibold">growth rate of 80%</span> in the coming years.
               </p>
               <p>
-                This growth will be driven by our <span className="text-primary font-semibold">exceptional services</span>, excellent customer relationships and strategic marketing efforts.
+                This growth will be driven by our <span className="text-accent font-semibold">exceptional services</span>, excellent customer relationships and strategic marketing efforts.
               </p>
               <p>
-                We have carefully analyzed the market demand and believe Cape Town presents a <span className="text-primary font-semibold">lucrative opportunity</span> for our business to thrive.
+                We have carefully analyzed the market demand and believe Cape Town presents a <span className="text-accent font-semibold">lucrative opportunity</span> for our business to thrive.
               </p>
             </div>
           </div>
@@ -106,7 +81,7 @@ const LearnAboutEEM = () => {
         {/* Conclusion */}
         <div className="text-center mb-16">
           <p className="text-xl font-display">
-            In Conclusion: <span className="text-primary font-semibold">Elegance Events Management</span> is poised to become the <span className="text-primary font-semibold">leading event management company</span> in Cape Town. We are excited to embark on this journey and look forward to making every event unforgettable.
+            In Conclusion: <span className="text-accent font-semibold">Elegance Events Management</span> is poised to become the <span className="text-accent font-semibold">leading event management company</span> in Cape Town. We are excited to embark on this journey and look forward to making every event unforgettable.
           </p>
         </div>
 
