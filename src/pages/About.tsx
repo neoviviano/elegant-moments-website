@@ -6,6 +6,7 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-24 px-4 max-w-7xl mx-auto">
+        <h1 className="text-4xl font-display font-bold text-center mb-2">Hello</h1>
         <h1 className="text-4xl font-display font-bold text-center mb-12">About Us</h1>
         
         {/* Origins Section */}
