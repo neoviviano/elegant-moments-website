@@ -1,11 +1,32 @@
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 const About = () => {
+  const { toast } = useToast();
+
+  const copyLink = () => {
+    const link = `${window.location.origin}/about`;
+    navigator.clipboard.writeText(link);
+    toast({
+      title: "Link copied!",
+      description: "The link to this page has been copied to your clipboard.",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-24 px-4 max-w-7xl mx-auto">
+        <div className="flex justify-center mb-4">
+          <Button 
+            variant="outline" 
+            onClick={copyLink}
+            className="bg-accent text-primary hover:bg-accent/90"
+          >
+            Copy Link to About Page
+          </Button>
+        </div>
         <h1 className="text-4xl font-display font-bold text-center mb-2">Hello</h1>
         <h1 className="text-4xl font-display font-bold text-center mb-12">About Us</h1>
         
